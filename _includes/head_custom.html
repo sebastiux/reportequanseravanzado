@@ -1,4 +1,42 @@
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<!-- Tema claro/oscuro: se aplica antes de pintar la página para evitar parpadeo.
+     Oscuro por defecto; la preferencia se guarda en localStorage. -->
+<script>
+  (function () {
+    var KEY = 'aero2-theme';
+    var base = "{{ '/assets/css/just-the-docs-' | relative_url }}";
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    var theme = saved === 'light' ? 'light' : 'dark';
+
+    function apply(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      var css = document.querySelector('link[rel="stylesheet"][href*="just-the-docs-"]:not(#jtd-head-nav-stylesheet)');
+      if (css) css.setAttribute('href', base + t + '.css');
+    }
+    apply(theme);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var label = btn.querySelector('.theme-toggle__label');
+      function sync() {
+        var isLight = theme === 'light';
+        label.textContent = isLight ? 'Claro' : 'Oscuro';
+        btn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+        btn.setAttribute('aria-pressed', String(isLight));
+      }
+      sync();
+      btn.addEventListener('click', function () {
+        theme = theme === 'light' ? 'dark' : 'light';
+        apply(theme);
+        try { localStorage.setItem(KEY, theme); } catch (e) {}
+        sync();
+      });
+    });
+  })();
+</script>
 <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" sizes="any">
 <script>
   document.addEventListener('DOMContentLoaded', () => {
