@@ -1,356 +1,207 @@
-/* === HEADER (barra superior) === */
-.site-header { background-color: #E00034 !important; }
-.site-title, .site-nav a { color: #ffffff !important; }
+/* =====================================================================
+   PORTAFOLIO AERO 2 — Tema oscuro
+   Base: color_scheme: dark de Just the Docs (_config.yml)
+   Paleta: negro carbón + rojo Ibero
+   ===================================================================== */
 
-/* === ENLACES EN CONTENIDO (sin morado/azul y con subrayado del color) === */
-:root { --link-color: #E00034; }
+:root {
+  --bg: #0B0B0B;
+  --bg-elevated: #131313;
+  --bg-soft: #181818;
+  --border: rgba(255, 255, 255, .14);
+  --border-strong: rgba(255, 255, 255, .22);
+  --text: #E2E8F0;
+  --text-muted: #AEB4BE;
+  --heading: #FFFFFF;
+  --accent: #FF4D5E;
+  --accent-soft: #FF7C88;
+  --accent-pale: #FFD1D6;
+  --brand: #B5122A;
+  --wine: #3A0B12;
+  --link-color: var(--accent);
+  color-scheme: dark;
+}
+
+/* === FONDO Y TEXTO === */
+html,
+body,
+.main,
+.main-content-wrap,
+.page-content {
+  background: linear-gradient(135deg, #090909 0%, #171717 48%, #0B0B0B 100%) fixed !important;
+  color: var(--text);
+}
+.main-content { color: var(--text); }
+.main-content h1, .main-content h2, .main-content h3,
+.main-content h4, .main-content h5, .main-content h6,
+.main-content strong { color: var(--heading); }
+.main-content p, .main-content li { color: #CBD5E1; }
+.main-content hr { background-color: var(--border); }
+
+/* === ENLACES === */
 a, a:visited { color: var(--link-color); }
-a { text-decoration-color: rgba(224, 0, 52, 0.4); }
-a:hover { color: #b00028; text-decoration-color: rgba(176, 0, 40, 0.6); }
-a:focus { outline: 2px solid #FFD5DE; outline-offset: 2px; }
+a { text-decoration-color: rgba(255, 77, 94, .4); }
+a:hover { color: #FFB2BA; text-decoration-color: rgba(255, 178, 186, .8); }
+a:focus-visible { outline: 2px solid var(--accent-pale); outline-offset: 2px; }
 
-/* === SIDEBAR ROJO COMPLETO === */
-.side-bar,
+/* === HEADER SUPERIOR (búsqueda y enlaces auxiliares) === */
+.main-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.search-input { background: transparent !important; color: var(--text) !important; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-label .search-icon { color: var(--text-muted); }
+.aux-nav .aux-nav-list-link, .aux-nav .aux-nav-list-link:visited { color: var(--accent) !important; }
+
+/* === SIDEBAR === */
+.side-bar {
+  background: linear-gradient(180deg, var(--wine) 0%, #1C0B0E 48%, #090909 100%) !important;
+  border-right: 1px solid var(--border) !important;
+}
+.side-bar .site-header,
 .side-bar .site-nav,
-.side-bar .nav-list { background-color: #E00034 !important; }
+.side-bar .nav-list { background: transparent !important; }
+.site-header { border-bottom-color: var(--border) !important; }
 
-/* Título del sitio en el sidebar */
 .side-bar .site-title {
-  color: #ffffff !important;
+  color: #FFFFFF !important;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.15rem !important;
+  white-space: nowrap;
 }
 
-/* Links del sidebar (texto blanco; sin degradados) */
-.nav-list .nav-list-link,
-.nav-list .nav-list-link:visited { color: #ffffff !important; }
-.nav-list .nav-list-link,
-.nav-list .nav-list-link.active,
-.nav-list .nav-list-link:hover {
-  background: none !important;            /* quita el gradiente lila */
-}
-.nav-list .nav-list-link.active {
-  color: #FFD5DE !important;
-  font-weight: 500;
-  background-color: rgba(255,255,255,0.12) !important;
-}
-.nav-list .nav-list-link:hover {
-  color: #FFD5DE !important;
-  background-color: rgba(255,255,255,0.08) !important;
-}
-
-/* (antiguo) Jerarquía simple - será mejorado al final */
-.nav-list .nav-list-item .nav-list .nav-list-link { padding-left: 1.25rem; }
-
-/* Flechas (chevrons) del menú */
-.nav-list-expander,
-.nav-list-expander svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: none !important;
-}
-.nav-list-expander:hover,
-.nav-list-expander:hover svg {
-  color: #FFD5DE !important;
-  stroke: #FFD5DE !important;
-}
-
-/* === FOOTER DEL SIDEBAR (texto y enlace legibles) === */
-.side-bar .site-footer { color: #ffffff !important; }
-.side-bar .site-footer a,
-.side-bar .site-footer a:visited {
-  color: #FFD5DE !important;
-  text-decoration-color: rgba(255,213,222,0.6);
-}
-.side-bar .site-footer a:hover {
-  color: #ffffff !important;
-  text-decoration-color: #ffffff;
-}
-
-/* === MENÚ HAMBURGUESA (móvil) EN BLANCO === */
-#menu-toggle + label,
-.menu-label,
-.menu-button,
-.menu-icon,
-.menu-icon svg,
-.site-header .menu-icon,
-.site-header .menu-button {
-  color: #ffffff !important;
-  fill:  #ffffff !important;
-  stroke:#ffffff !important;
-}
-#menu-toggle:focus + label,
-.menu-button:focus { outline: 2px solid #FFD5DE; outline-offset: 2px; }
-
-/* === MIGAS (breadcrumbs) a la paleta === */
-.breadcrumbs li a, .breadcrumbs li a:visited { color: #E00034; }
-.breadcrumbs li a:hover { color: #b00028; }
-
-/* === CONTENIDO === */
-.page-content { background-color: #ffffff; color: #333333; }
-
-/* ===== 1) Header: iconos/botón del menú en blanco (forzado) ===== */
-.site-header svg,
-.site-header .menu-icon,
-.site-header .menu-button,
-.site-header .menu-icon svg {
-  color: #ffffff !important;
-  fill:  #ffffff !important;
-  stroke:#ffffff !important;
-}
-
-/* Estado abierto del menú (checkbox marcado) */
-#menu-toggle:checked + label,
-#menu-toggle:checked + label .menu-icon,
-#menu-toggle:checked + label .menu-icon svg {
-  color: #ffffff !important;
-  fill:  #ffffff !important;
-  stroke:#ffffff !important;
-}
-
-/* Fallback por si el tema usa otros selectores para el toggle */
-.site-header .nav-toggle,
-.site-header .nav-toggle .icon,
-.site-header .nav-trigger,
-.site-header .nav-trigger .icon {
-  color: #ffffff !important;
-  fill:  #ffffff !important;
-  stroke:#ffffff !important;
-}
-
-/* ===== FOOTER: estilos separados por breakpoint ===== */
-
-/* Desktop (sidebar visible, fondo rojo) */
-@media (min-width: 66rem) {
-  .side-bar .site-footer {
-    color: #ffffff !important;
-    opacity: 1 !important;
-  }
-  .side-bar .site-footer a,
-  .side-bar .site-footer a:visited {
-    color: #FFD5DE !important;
-    text-decoration-color: rgba(255, 213, 222, 0.6) !important;
-  }
-  .side-bar .site-footer a:hover {
-    color: #ffffff !important;
-    text-decoration-color: #ffffff !important;
-  }
-}
-
-/* Móvil / pantalla chica (footer global sobre fondo claro) */
-@media (max-width: 66rem) {
-  footer.site-footer {
-    background: #ffffff !important;   /* fondo claro */
-    opacity: 1 !important;
-  }
-
-  /* Texto base del footer en gris legible */
-  footer.site-footer,
-  footer.site-footer p,
-  footer.site-footer span,
-  footer.site-footer *:not(a) {
-    color: #495057 !important;
-    text-shadow: none !important;
-  }
-
-  /* Enlaces del footer en rojo Ibero */
-  footer.site-footer a,
-  footer.site-footer a:visited {
-    color: #E00034 !important;
-    text-decoration-color: rgba(224, 0, 52, 0.5) !important;
-  }
-  footer.site-footer a:hover {
-    color: #b00028 !important;
-    text-decoration-color: rgba(176, 0, 40, 0.7) !important;
-  }
-}
-
-/* ====== Jerarquía del menú lateral (mejor diferenciación) ====== */
-
-/* Nivel 1 (padres) */
-.side-bar .nav-list > .nav-list-item > .nav-list-link {
-  font-weight: 400;
-  letter-spacing: .2px;
-  font-size: 1.05rem;
-  padding-left: 1rem;
+.nav-list .nav-list-item .nav-list-link,
+.nav-list .nav-list-item .nav-list-link:visited {
+  color: #FFFFFF !important;
   background: none !important;
 }
-
-/* Nivel 2 (hijos) */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link {
-  font-weight: 300;
-  font-size: 0.95rem;
-  padding-left: 1.75rem;
-  position: relative;
-  background: rgba(255,255,255,0.05); /* leve contraste */
-  border-left: 3px solid transparent;
+.nav-list .nav-list-item .nav-list-link:hover {
+  color: var(--accent-pale) !important;
+  background: rgba(255, 255, 255, .10) !important;
 }
-
-/* Nivel 3 (nietos) */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-item .nav-list .nav-list-link {
-  padding-left: 2.25rem;
-  font-size: 0.9rem;
-  background: rgba(255,255,255,0.03);
-}
-
-/* Punto visual (bullet) para hijos */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link::before {
-  content: "•";
-  position: absolute;
-  left: 1.3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: .6;
-  font-size: .8rem;
-}
-
-/* Hover y Activo más notorios */
-.side-bar .nav-list .nav-list-link:hover {
-  color: #FFD5DE !important;
-  background: rgba(255,255,255,0.10) !important;
-}
-.side-bar .nav-list .nav-list-link.active {
-  color: #ffffff !important;
+.nav-list .nav-list-item .nav-list-link.active {
+  color: #FFFFFF !important;
   font-weight: 500;
-  background: rgba(255,255,255,0.20) !important;
+  background: rgba(255, 255, 255, .18) !important;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.nav-list-expander, .nav-list-expander svg { color: #FFFFFF !important; }
+.side-bar .nav-list-link:focus-visible { outline: 2px solid var(--accent-pale) !important; outline-offset: 2px; }
+
+/* Neutraliza pseudo-elementos del tema en el menú */
+.side-bar a::before, .side-bar a::after { content: none !important; }
+
+/* Menú hamburguesa (móvil) */
+.site-header .site-button,
+.site-header svg { color: #FFFFFF !important; }
+
+/* Footer del tema oculto */
+.side-bar .site-footer, footer.site-footer { display: none !important; }
+
+@media (max-width: 49.99rem) {
+  .side-bar { background: #1C0B0E !important; }
 }
 
-/* Barra izquierda solo para hijos (nivel 2+) en hover/activo */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link:hover,
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link.active {
-  border-left-color: #FFD5DE;
-}
-
-/* Mejor foco accesible */
-.side-bar .nav-list .nav-list-link:focus {
-  outline: 2px solid #FFD5DE !important;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Separación sutil entre secciones de nivel 1 */
-.side-bar .nav-list > .nav-list-item + .nav-list-item {
-  margin-top: .15rem;
-}
-
-/* Oculta el footer del tema en todas las vistas */
-footer.site-footer { display: none !important; } 
-
-/* ===== Footer propio (siempre visible) ===== */
-.custom-footer{
-  margin-top: 3rem;
-  padding-top: 1rem;
-  /* border-top: 1px solid #e5e7eb;     /* separador sutil */
-  color: #6B7280;                     /* gris medio */
-  font-size: 0.95rem;
-  background: transparent;
-}
-
-.custom-footer a,
-.custom-footer a:visited{
-  color: #E00034;                     /* rojo IBERO */
-  text-decoration-color: rgba(224,0,52,.45);
-}
-
-.custom-footer a:hover{
-  color: #b00028;
-  text-decoration-color: rgba(176,0,40,.65);
-}
-
-.custom-footer__modified strong{
-  color: #4B5563;                     /* gris un poco más oscuro para el label */
-}
-
-/* Asegura legibilidad en móvil (fondo claro) */
-@media (max-width: 66rem){
-  .custom-footer{
-    background: #ffffff;
-    color: #6B7280;
-  }
-}
-
-/* ===== NAVBAR FIX (Just the Docs) =====
-   - Neutraliza pseudo-elementos globales en el sidebar para evitar "∞"
-   - Redibuja un bullet limpio solo en el 2º nivel
-*/
-.side-bar a::before,
-.side-bar a::after,
-.site-nav .nav-list-link::before,
-.site-nav .nav-list-link::after {
-  content: none !important;
-}
-
-/* Espacio para el bullet en hijos (nivel 2) */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link {
-  position: relative;
-  padding-left: 1.6rem;
-}
-
-/* Bullet para nivel 2 (Unicode) */
-.side-bar .nav-list .nav-list-item .nav-list .nav-list-link::before {
-  content: "\2022" !important;      /* bullet • */
-  position: absolute;
-  left: 0.9rem;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: .6;
-  font-size: .8rem;
-  color: currentColor;
-  font-variant-ligatures: none;
-}
-/* ===== END NAVBAR FIX ===== */
-
-/* Tamaño y espaciado del logo en el título del sitio */
-.site-logo,
-.site-title img {
-  height: 28px;         /* ajusta a tu preferencia: 24–36px suele verse bien */
+/* Logo junto al título */
+.site-logo, .site-title img {
+  height: 28px;
   width: auto;
   vertical-align: middle;
   margin-right: .5rem;
 }
+@media (max-width: 600px) { .site-logo, .site-title img { height: 24px; } }
 
-/* Evita que el logo se “encime” en pantallas pequeñas */
-@media (max-width: 600px) {
-  .site-logo,
-  .site-title img {
-    height: 24px;
-  }
-}
+/* === BREADCRUMBS === */
+.breadcrumb-nav-list-item, .breadcrumb-nav-list-item a { color: var(--text-muted); }
 
-video {
-  max-width: 100%;
-  height: auto;
+/* === TABLAS === */
+.main-content .table-wrapper {
+  background-color: #111111;
+  border: 1px solid var(--border);
+  box-shadow: none;
+  border-radius: 6px;
+  overflow-x: auto;
 }
+.main-content table { background-color: #111111; color: var(--text); }
+.main-content th, .main-content td {
+  border-color: rgba(255, 255, 255, .12) !important;
+  background-color: #151515;
+  color: var(--text);
+  vertical-align: middle;
+}
+.main-content thead th {
+  background-color: var(--wine);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.main-content tbody tr:nth-child(even) td { background-color: #1B1214; }
 
-.responsive-embed {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 */
-  overflow: hidden;
-  border-radius: 12px; /* opcional */
+/* === CÓDIGO === */
+.main-content code {
+  border-color: rgba(255, 77, 94, .28);
+  background-color: #211316;
+  color: #FFB3BD;
 }
+.main-content pre.highlight,
+.main-content div.highlighter-rouge,
+.main-content figure.highlight {
+  background-color: #101010 !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: none;
+}
+.main-content .highlight .c, .main-content .highlight .c1, .main-content .highlight .cm { color: #7C8594; font-style: italic; }
+.main-content pre code { background: transparent; border: 0; color: #E2E8F0; }
 
-.responsive-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+/* === CALLOUTS (Nota, Resultado, Importante, Advertencia) === */
+.main-content .note, .main-content .result, .main-content .important, .main-content .warning {
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 6px;
+  box-shadow: none;
 }
+.main-content .note { border-left-color: #60A5FA; }
+.main-content .result { border-left-color: #34D399; }
+.main-content .important { border-left-color: #A78BFA; }
+.main-content .warning { border-left-color: var(--accent); }
+.main-content .note::before { color: #60A5FA !important; }
+.main-content .result::before { color: #34D399 !important; }
+.main-content .important::before { color: #A78BFA !important; }
+.main-content .warning::before { color: var(--accent) !important; }
+
+/* === BOTONES === */
+.btn, .btn:visited {
+  background-color: var(--bg-soft) !important;
+  background-image: none !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--border-strong) !important;
+  box-shadow: none !important;
+}
+.btn:hover { border-color: var(--accent) !important; color: #FFB2BA !important; }
+.btn-primary, .btn-primary:visited {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: #FFFFFF !important;
+}
+.btn-primary:hover { background-color: #D3183A !important; color: #FFFFFF !important; }
+
 /* =====================================================================
-   REPORTE AERO 2 — componentes de presentación
+   COMPONENTES DEL REPORTE
    ===================================================================== */
 
 /* Portada */
 .report-kicker {
   text-transform: uppercase;
   letter-spacing: .12em;
+  font-family: "Courier New", monospace;
   font-size: .78rem !important;
-  font-weight: 600;
-  color: #E00034;
+  font-weight: 700;
+  color: var(--accent) !important;
   margin-bottom: .25rem !important;
 }
-.report-lead { font-size: 1.15rem !important; color: #4B5563; line-height: 1.6; }
+.report-lead { font-size: 1.15rem !important; color: var(--text) !important; line-height: 1.6; }
 
 .report-meta {
   display: grid;
@@ -359,9 +210,9 @@ video {
   margin: 1.5rem 0;
 }
 .report-meta > div {
-  border-left: 3px solid #E00034;
+  border-left: 3px solid var(--accent);
   padding: .5rem .9rem;
-  background: #FAFAFB;
+  background: rgba(255, 255, 255, .04);
   border-radius: 0 6px 6px 0;
 }
 .report-meta__label {
@@ -369,10 +220,11 @@ video {
   font-size: .72rem;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: #6B7280;
+  font-weight: 700;
+  color: var(--accent-soft);
   margin-bottom: .2rem;
 }
-.report-meta__value { display: block; font-size: .92rem; font-weight: 500; color: #1F2937; line-height: 1.5; }
+.report-meta__value { display: block; font-size: .92rem; font-weight: 500; color: #FFFFFF; line-height: 1.5; }
 
 /* Tarjetas de resultados clave */
 .kpi-grid {
@@ -382,13 +234,13 @@ video {
   margin: 1.25rem 0 1.75rem;
 }
 .kpi {
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: .9rem 1rem;
-  background: #ffffff;
+  background: rgba(255, 255, 255, .03);
 }
-.kpi__value { display: block; font-size: 1.35rem; font-weight: 600; color: #E00034; line-height: 1.2; }
-.kpi__label { display: block; font-size: .82rem; color: #6B7280; margin-top: .2rem; }
+.kpi__value { display: block; font-size: 1.35rem; font-weight: 600; color: var(--accent); line-height: 1.2; }
+.kpi__label { display: block; font-size: .82rem; color: var(--text-muted); margin-top: .2rem; }
 
 /* Índice de capítulos */
 .chapter-grid {
@@ -402,47 +254,63 @@ a.chapter-card, a.chapter-card:visited {
   gap: .85rem;
   align-items: flex-start;
   padding: .9rem 1rem;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border);
   border-radius: 10px;
-  color: #1F2937;
+  background: rgba(255, 255, 255, .03);
+  color: var(--text);
   text-decoration: none;
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition: border-color .15s ease, background-color .15s ease;
 }
-a.chapter-card:hover { border-color: #E00034; box-shadow: 0 4px 14px rgba(224,0,52,.08); color: #1F2937; }
-.chapter-card__num { font-size: 1.4rem; font-weight: 700; color: #E00034; line-height: 1; min-width: 2rem; }
-.chapter-card__text strong { display: block; font-weight: 600; }
-.chapter-card__text small { display: block; color: #6B7280; font-size: .85rem; margin-top: .15rem; }
+a.chapter-card:hover { border-color: var(--accent); background: rgba(255, 77, 94, .06); }
+.chapter-card__num { font-family: "Courier New", monospace; font-size: 1.3rem; font-weight: 700; color: var(--accent); line-height: 1; min-width: 2rem; }
+.chapter-card__text strong { display: block; font-weight: 600; color: #FFFFFF; }
+a.chapter-card:hover .chapter-card__text strong { color: var(--accent-soft); }
+.chapter-card__text small { display: block; color: var(--text-muted); font-size: .85rem; margin-top: .15rem; }
 
-/* Figuras con pie numerado */
-.report-figure {
-  margin: 1.75rem 0;
-  text-align: center;
-}
+/* Figuras con pie numerado (los diagramas tienen fondo blanco: se enmarcan) */
+.report-figure { margin: 1.75rem 0; text-align: center; }
 .report-figure img {
   max-width: 100%;
   height: auto;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: .5rem;
 }
 .report-figure figcaption {
   margin-top: .6rem;
-  font-size: .88rem;
-  color: #6B7280;
+  font-size: .86rem;
+  color: var(--text-muted);
   line-height: 1.5;
 }
-.report-figure figcaption strong { color: #374151; }
+.report-figure figcaption strong { color: #FFFFFF; }
 
-/* Ecuaciones: scroll horizontal en pantallas pequeñas */
-mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .25rem 0; }
+/* Video responsivo */
+.responsive-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #090909;
+}
+.responsive-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+video { max-width: 100%; height: auto; }
 
-/* Tablas más sobrias */
-.main-content table th { background: #F9FAFB; font-weight: 600; }
-.main-content table td, .main-content table th { vertical-align: middle; }
+/* Ecuaciones: color claro y scroll horizontal en pantallas pequeñas */
+mjx-container { color: #F1F5F9; }
+mjx-container[display="true"] {
+  max-width: 100%;
+  min-width: 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .25rem 0;
+}
 
-/* Bloques de código */
-.main-content pre.highlight, .main-content figure.highlight pre { border-radius: 8px; }
+/* Índice desplegable de cada página */
+.main-content details { border-color: var(--border); }
+.main-content summary { color: var(--text-muted); }
 
 /* Navegación entre secciones */
 .page-nav {
@@ -451,26 +319,9 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 1.25rem;
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid var(--border);
   flex-wrap: wrap;
 }
 .page-nav a { font-weight: 500; text-decoration: none; }
-.page-nav small { display: block; color: #6B7280; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+.page-nav small { display: block; color: var(--text-muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
 .page-nav__next { margin-left: auto; text-align: right; }
-
-/* Botones en la paleta del sitio */
-.btn { color: #E00034 !important; }
-.btn-primary, .btn-primary:visited {
-  background-color: #E00034 !important;
-  background-image: none !important;
-  border-color: #E00034 !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-}
-.btn-primary:hover { background-color: #b00028 !important; }
-
-/* Título del sitio: tamaño contenido para que no se desborde junto al logo */
-.side-bar .site-title { font-size: 1.15rem !important; white-space: nowrap; }
-
-/* Tablas: scroll horizontal propio en pantallas pequeñas */
-.table-wrapper { overflow-x: auto; }
