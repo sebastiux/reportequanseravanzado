@@ -1,4 +1,4 @@
-title: Control Avanzado · Aero 2
+title: Quanser Aero 2
 description: Portafolio del proyecto de Control Avanzado y Robótica O26 - Control LQR y Observador de Estados sobre el Quanser Aero 2
 
 # GitHub Pages: modo recomendado
@@ -28,8 +28,26 @@ search:
 
 # Ejemplo de enlace auxiliar (aparece arriba a la derecha)
 aux_links:
+  "Reporte PDF":
+    - "/reportequanseravanzado/assets/files/reporte-aero2.pdf"
   "Repositorio en GitHub":
     - "https://github.com/sebastiux/reportequanseravanzado"
+
+# Callouts (bloques de nota/resultado/advertencia)
+callouts_level: quiet
+callouts:
+  note:
+    title: Nota
+    color: blue
+  result:
+    title: Resultado
+    color: green
+  important:
+    title: Importante
+    color: purple
+  warning:
+    title: Advertencia
+    color: red
 
 # Enlaces
 permalink: pretty

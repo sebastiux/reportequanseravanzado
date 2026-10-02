@@ -337,3 +337,140 @@ video {
   height: 100%;
   border: 0;
 }
+/* =====================================================================
+   REPORTE AERO 2 — componentes de presentación
+   ===================================================================== */
+
+/* Portada */
+.report-kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem !important;
+  font-weight: 600;
+  color: #E00034;
+  margin-bottom: .25rem !important;
+}
+.report-lead { font-size: 1.15rem !important; color: #4B5563; line-height: 1.6; }
+
+.report-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+.report-meta > div {
+  border-left: 3px solid #E00034;
+  padding: .5rem .9rem;
+  background: #FAFAFB;
+  border-radius: 0 6px 6px 0;
+}
+.report-meta__label {
+  display: block;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #6B7280;
+  margin-bottom: .2rem;
+}
+.report-meta__value { display: block; font-size: .92rem; font-weight: 500; color: #1F2937; line-height: 1.5; }
+
+/* Tarjetas de resultados clave */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+.kpi {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: .9rem 1rem;
+  background: #ffffff;
+}
+.kpi__value { display: block; font-size: 1.35rem; font-weight: 600; color: #E00034; line-height: 1.2; }
+.kpi__label { display: block; font-size: .82rem; color: #6B7280; margin-top: .2rem; }
+
+/* Índice de capítulos */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0 2rem;
+}
+a.chapter-card, a.chapter-card:visited {
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+  padding: .9rem 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  color: #1F2937;
+  text-decoration: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+a.chapter-card:hover { border-color: #E00034; box-shadow: 0 4px 14px rgba(224,0,52,.08); color: #1F2937; }
+.chapter-card__num { font-size: 1.4rem; font-weight: 700; color: #E00034; line-height: 1; min-width: 2rem; }
+.chapter-card__text strong { display: block; font-weight: 600; }
+.chapter-card__text small { display: block; color: #6B7280; font-size: .85rem; margin-top: .15rem; }
+
+/* Figuras con pie numerado */
+.report-figure {
+  margin: 1.75rem 0;
+  text-align: center;
+}
+.report-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: .5rem;
+}
+.report-figure figcaption {
+  margin-top: .6rem;
+  font-size: .88rem;
+  color: #6B7280;
+  line-height: 1.5;
+}
+.report-figure figcaption strong { color: #374151; }
+
+/* Ecuaciones: scroll horizontal en pantallas pequeñas */
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .25rem 0; }
+
+/* Tablas más sobrias */
+.main-content table th { background: #F9FAFB; font-weight: 600; }
+.main-content table td, .main-content table th { vertical-align: middle; }
+
+/* Bloques de código */
+.main-content pre.highlight, .main-content figure.highlight pre { border-radius: 8px; }
+
+/* Navegación entre secciones */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #E5E7EB;
+  flex-wrap: wrap;
+}
+.page-nav a { font-weight: 500; text-decoration: none; }
+.page-nav small { display: block; color: #6B7280; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+.page-nav__next { margin-left: auto; text-align: right; }
+
+/* Botones en la paleta del sitio */
+.btn { color: #E00034 !important; }
+.btn-primary, .btn-primary:visited {
+  background-color: #E00034 !important;
+  background-image: none !important;
+  border-color: #E00034 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.btn-primary:hover { background-color: #b00028 !important; }
+
+/* Título del sitio: tamaño contenido para que no se desborde junto al logo */
+.side-bar .site-title { font-size: 1.15rem !important; white-space: nowrap; }
+
+/* Tablas: scroll horizontal propio en pantallas pequeñas */
+.table-wrapper { overflow-x: auto; }
